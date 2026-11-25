@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- PART 1: SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <a href="#top" class="logo-link">
+                <img
+                    src="./my%20budget%20logo.png"
+                    alt="My Budget Tracker Logo"
+                    class="main-logo"
+                >
+            </a>
+
+            <h2>SpendWise</h2>
+
+            <nav class="navigation">
+
+                <a href="#top" class="nav-item active">🏠 Dashboard</a>
+
+                <a href="#your-expenses" class="nav-item">💳 Transactions</a>
+
+                <a href="#budget-summary" class="nav-item">📊 Budgets</a>
+
+                <a href="#your-expenses" class="nav-item">📈 Reports</a>
+
+                <a href="#instructions" class="nav-item">⚙️ Settings</a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- PART 2: MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header id="top" class="header">
+
+                <div class="header-title">
+
+                    <h1>My Budget Tracker</h1>
+
+                    <p>Track your income and expenses in one place.</p>
+
+                </div>
+
+                <div class="profile">
+
+                    <span>👤</span>
+
+                    <div>
+                        <h3>Duop Yien</h3>
+                        <p>Personal Account</p>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PART 3: BUDGET SUMMARY (card style, right under the header) -->
+
+            <section id="budget-summary" class="dashboard-cards">
+
+                <h2 class="section-title">Budget Summary</h2>
+
+                <div class="budget-input-box">
+                    <label for="budgetInput">Set Monthly Budget (KES):</label>
+                    <input
+                        type="number"
+                        id="budgetInput"
+                        placeholder="e.g. 20000"
+                        min="0"
+                    >
+                </div>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">💼</div>
+                    <h3>Monthly Budget</h3>
+                    <p>Amount you plan to spend</p>
+                    <h2 id="budgetAmount">KSh 0</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">💸</div>
+                    <h3>Total Expenses</h3>
+                    <p>Spent so far</p>
+                    <h2 id="expenseAmount">KSh 0</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">🏦</div>
+                    <h3>Remaining Balance</h3>
+                    <p>Left to spend</p>
+                    <h2 id="remainingAmount">KSh 0</h2>
+                </article>
+
+                <p id="budgetMessage">
+                    Your budget summary will appear here.
+                </p>
+
+            </section>
+
+
+            <!-- PART 4: ADD EXPENSE FORM -->
+
+            <section id="add-expense" class="add-expense-section">
+
+                <h2 class="section-title">Add Expense</h2>
+
+                <form>
+
+                    <label for="expense-name">Expense Name:</label>
+
+                    <input
+                        type="text"
+                        id="expense-name"
+                        placeholder="Enter expense name"
+                    >
+
+                    <label for="expenseInput">Amount (KES):</label>
+
+                    <input
+                        type="number"
+                        id="expenseInput"
+                        placeholder="Enter amount"
+                        min="0.01"
+                        step="0.01"
+                    >
+
+                    <label for="expense-category">Category:</label>
+
+                    <select id="expense-category">
+
+                        <option value="">Select a category</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                    <button type="button" id="addExpenseButton">
+                        Add Expense
+                    </button>
+
+                    <button type="button" id="checkBudgetButton">
+                        Check Budget
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- PART 5: EXPENSES TABLE -->
+
+            <section id="your-expenses">
+
+                <h2 class="section-title">Your Expenses</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount (KES)</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="expenseTableBody">
+
+                        <tr>
+                            <td>Shopping</td>
+                            <td>500</td>
+                            <td>Food</td>
+                            <td>2026-11-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>Bus Fare</td>
+                            <td>200</td>
+                            <td>Transport</td>
+                            <td>2026-11-02</td>
+                        </tr>
+
+                        <tr>
+                            <td>House Payment</td>
+                            <td>3000</td>
+                            <td>Rent</td>
+                            <td>2026-11-03</td>
+                        </tr>
+
+                        <tr>
+                            <td>Movie</td>
+                            <td>400</td>
+                            <td>Entertainment</td>
+                            <td>2026-11-04</td>
+                        </tr>
+
+                        <tr>
+                            <td>Other Items</td>
+                            <td>350</td>
+                            <td>Other</td>
+                            <td>2026-11-05</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <!-- PART 6: INSTRUCTIONS -->
+
+            <section id="instructions">
+
+                <details>
+
+                    <summary>How to Use This Budget Tracker</summary>
+
+                    <ol>
+                        <li>Enter your monthly budget in the Budget Summary.</li>
+                        <li>Enter the name of your expense.</li>
+                        <li>Enter the amount of money spent.</li>
+                        <li>Select an expense category.</li>
+                        <li>Click the Add Expense button.</li>
+                        <li>Review your expenses in the table.</li>
+                    </ol>
+
+                </details>
+
+            </section>
+
+
+            <!-- PART 7: FINANCIAL CATEGORY CARDS (second last) -->
+
+            <section id="dashboard-cards" class="dashboard-cards">
+
+                <h2 class="section-title">Monthly Financial Overview</h2>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">🍔</div>
+                    <h3>Food</h3>
+                    <p>Monthly Expenses</p>
+                    <h2>$420</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">🚗</div>
+                    <h3>Transport</h3>
+                    <p>Monthly Expenses</p>
+                    <h2>$180</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">🏠</div>
+                    <h3>Rent</h3>
+                    <p>Monthly Expenses</p>
+                    <h2>$1,200</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">🎮</div>
+                    <h3>Entertainment</h3>
+                    <p>Monthly Expenses</p>
+                    <h2>$150</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">💰</div>
+                    <h3>Savings</h3>
+                    <p>Monthly Savings</p>
+                    <h2>$600</h2>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-icon">💡</div>
+                    <h3>Utilities</h3>
+                    <p>Monthly Expenses</p>
+                    <h2>$220</h2>
+                </article>
+
+            </section>
+
+
+            <!-- PART 8: SAVING MONEY VIDEO (last) -->
+
+            <section id="video-section">
+
+                <h2 class="section-title">Learn How to Save Money</h2>
+
+                <p>
+                    Watch this video to learn simple ways to save money,
+                    control spending, and achieve your financial goals.
+                </p>
+
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/TS4VGNSsFgk"
+                    title="How to Save Money for Beginners"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+
+            </section>
+
+
+            <!-- PART 9: FOOTER -->
+
+            <footer>
+
+                <p>
+                    &copy; 2026 SpendWise Budget Tracker.
+                    All rights reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- CONNECT JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
