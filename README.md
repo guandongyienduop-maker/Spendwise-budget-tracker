@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SpendWise – JavaScript Foundation
 
 ## Project Overview
@@ -386,3 +387,7 @@ Free to use for learning and personal projects.
 - The Netlify Deploys tab and the browser Console are the first places to look when something breaks.
 - Short, clear commit messages make changes easier to track and undo.
 - Static sites need no build command, which keeps deployment simple.
+=======
+# Spendwise-budget-tracker
+this is my power learn project
+>>>>>>> 9d94c0e0bf089a92c09ee23e79527bed834667e8
